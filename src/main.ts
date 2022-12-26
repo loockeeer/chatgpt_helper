@@ -71,7 +71,7 @@ async function getAnswer(message: Message) {
 client.on(Events.MessageCreate, async message => {
   if (message.author.bot) return
   if (!message.channel.isThread()) return
-  if (message.channel.parent?.id !== process.env.FORUM_ID) return
+  if (message.channel.parent?.id !in process.env.FORUM_IDS.split(",")) return
   if (message.author.id !== message.channel.ownerId && !message.content.startsWith("c!force")) return
   if (message.content.startsWith(".")) return
   if (message.content.startsWith("c!force")) message.content = message.content.replace("c!force ", "")
