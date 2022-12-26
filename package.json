@@ -13,7 +13,7 @@
     "typescript": "^4.9.4"
   },
   "scripts": {
-    "build": "esbuild src/*.ts src/utils/*.ts --outdir=dist --tsconfig=tsconfig.json",
+    "build": "esbuild src/*.ts --outdir=dist --tsconfig=tsconfig.json",
     "start": "npm run build && node dist/main",
     "format": "prettier --write src"
   },
